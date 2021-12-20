@@ -34,7 +34,7 @@ function setBackgroundImage(url) {
 
 function setBackgroundToRandomImage() {
   const n = Math.floor(Math.random() * (MAX_IMAGE_ID + 1));
-  setBackgroundImage(`/img/giphy-${n}.gif`)
+  setBackgroundImage(`./img/giphy-${n}.gif`)
 }
 
 // Trial
