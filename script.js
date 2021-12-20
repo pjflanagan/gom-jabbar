@@ -1,7 +1,7 @@
 
 // Util
 
-const IMAGE_COUNT = 9;
+const MAX_IMAGE_ID = 9;
 const DURATION = 3000; // (Math.random() * 15 + 30) * 1000;
 
 function getCurrentTime() {
@@ -33,7 +33,7 @@ function setBackgroundImage(url) {
 }
 
 function setBackgroundToRandomImage() {
-  const n = Math.floor(Math.random() * MAX_IMAGE_ID + 1);
+  const n = Math.floor(Math.random() * (MAX_IMAGE_ID + 1));
   setBackgroundImage(`/img/giphy-${n}.gif`)
 }
 
