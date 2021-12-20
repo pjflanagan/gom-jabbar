@@ -1,0 +1,72 @@
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Oxanium', sans-serif;
+  background-color: #000;
+}
+
+/* Text */
+
+.text {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+/* Gom Jabbar */
+
+.gom-jabbar {
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -190px;
+  margin-top: -120px;
+  width: 380px;
+  height: 240px;
+  background: #151c1a;
+}
+
+.gom-jabbar .gom-jabbar--center {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 340px;
+  height: 200px;
+  background: #000;
+}
+
+/* Background and Cover */
+
+.full-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#page-cover {
+  z-index: 3;
+  opacity: 0.6;
+  transition: background-color 0.4s;
+}
+
+#background-cover {
+  /* TODO: add animation class when trial starts */
+  background-color: #52150d;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+#background-image {
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
