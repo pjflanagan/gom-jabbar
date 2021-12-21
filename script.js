@@ -1,7 +1,7 @@
 
 // Util
 
-const MAX_IMAGE_ID = 21;
+const MAX_IMAGE_ID = 25;
 const DURATION = (Math.random() * 12 + 28) * 1000;
 
 function getCurrentTime() {
@@ -24,11 +24,13 @@ const TRIAL_SUBTITLES = [
   'Your mom is outside absolutley losing it.',
   `An animal caught in a trap will knaw off its leg...`,
   '...what will you do?',
+  `What's in the box? Pain.`,
 ];
 
 const DEATH_SUBTITLES = [
   'Give up your water.',
   'Fear was the mind killer.',
+  'IIIII AAAAM, SHAKIRAAAAAAAA!'
   // ''
 ];
 
@@ -147,7 +149,3 @@ function makeTrial() {
 
   return [startTrial, endTrial];
 }
-
-// Main
-
-const [startTrial, endTrial] = makeTrial();
