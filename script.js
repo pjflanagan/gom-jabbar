@@ -1,15 +1,46 @@
 
 // Util
 
-const MAX_IMAGE_ID = 9;
-const DURATION = 3000; // (Math.random() * 15 + 30) * 1000;
+const MAX_IMAGE_ID = 21;
+const DURATION = (Math.random() * 12 + 28) * 1000;
 
 function getCurrentTime() {
   return new Date().getTime();
 }
 
 function makeGifUrl(name) {
-  return `./gif/${name}.gif`;
+  return `./img/gif/${name}.gif`;
+}
+
+function makeBgUrl(name) {
+  return `./img/bg/${name}.jpg`;
+}
+
+// Text
+
+const TRIAL_SUBTITLES = [
+  'IT BURNS!',
+  'Fear is the mind killer.',
+  'Your mom is outside absolutley losing it.',
+  `An animal caught in a trap will knaw off its leg...`,
+  '...what will you do?',
+];
+
+const DEATH_SUBTITLES = [
+  'Give up your water.',
+  'Fear was the mind killer.',
+  // ''
+];
+
+
+const VICTORY_SUBTITLES = [
+  'Congratulations Paul, enjoy your Dune.',
+  `Spoiler: your dad won't be so lucky`,
+  // ''
+];
+
+function getRandomPhrase(phrases) {
+  return phrases[Math.floor(Math.random() * phrases.length)];
 }
 
 // UI
@@ -40,28 +71,30 @@ function setBackgroundToRandomImage() {
   setBackgroundImage(makeGifUrl(`giphy-${n}`));
 }
 
+function makeGameoverScreen(didSurvive) {
+  if (didSurvive) {
+    setTitleText('You are human');
+    setSubtitleText(getRandomPhrase(VICTORY_SUBTITLES));
+    setCoverColor('#75d10f');
+    setBackgroundImage(makeGifUrl('victory'));
+    return;
+  } 
+  setTitleText('You died');
+  setSubtitleText(getRandomPhrase(DEATH_SUBTITLES));
+  setCoverColor('#cb0e0e');
+  setBackgroundImage(makeBgUrl('gom-jabbar'));
+}
+
 // Trial
 
 function makeTrial() {
   let trialEndTime;
-  let interval;
+  let timeout;
   let ahhh = 'AHHH';
 
   function gameover(didSurvive) {
-    clearInterval(interval);
-
-    if (didSurvive) {
-      setTitleText('You are human');
-      setSubtitleText('Congratulations Paul, enjoy your Dune');
-      setCoverColor('#0f0');
-      setBackgroundImage(makeGifUrl('victory'));
-
-    } else {
-      setTitleText('You died');
-      setSubtitleText('');
-      setCoverColor('#f00');
-      // setBackgroundImage();
-    }
+    clearTimeout(timeout);
+    makeGameoverScreen(didSurvive);
   }
 
   const startTrial = () => {
@@ -71,23 +104,31 @@ function makeTrial() {
       console.error('Already ran trial');
       return;
     }
-    setTitleText('');
-    setSubtitleText(ahhh);
+    setTitleText(ahhh);
+    setSubtitleText(getRandomPhrase(TRIAL_SUBTITLES));
     setBackgroundToRandomImage();
 
     // set the end time of the trial
     trialEndTime = getCurrentTime() + DURATION;
 
-    interval = setInterval(() => {
+    function loop() {
+      const interval = Math.random() * 2000 + 1200;
+      timeout = setTimeout(() => {
+        setTitleText(ahhh += 'H');
+        setSubtitleText(getRandomPhrase(TRIAL_SUBTITLES));
+        setBackgroundToRandomImage();
+  
+        // if the trial is over, end the trial
+        if (getCurrentTime() > trialEndTime) {
+          gameover(true);
+        } else {
+          loop();
+        }
 
-      setSubtitleText(ahhh += 'HHH');
-      setBackgroundToRandomImage();
+      }, interval);
+    }
 
-      // if the trial is over, end the trial
-      if (getCurrentTime() > trialEndTime) {
-        gameover(true);
-      }
-    }, 1200);
+    loop();
   }
 
   const endTrial = () => {
