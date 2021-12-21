@@ -8,6 +8,10 @@ function getCurrentTime() {
   return new Date().getTime();
 }
 
+function makeGifUrl(name) {
+  return `./gif/${name}.gif`;
+}
+
 // UI
 
 function setTitleText(text) {
@@ -26,7 +30,6 @@ function setCoverColor(color) {
 }
 
 function setBackgroundImage(url) {
-  console.log(url);
   $('#background-image').css({
     backgroundImage: url ? `url(${url})` : 'none'
   });
@@ -34,7 +37,7 @@ function setBackgroundImage(url) {
 
 function setBackgroundToRandomImage() {
   const n = Math.floor(Math.random() * (MAX_IMAGE_ID + 1));
-  setBackgroundImage(`./img/giphy-${n}.gif`)
+  setBackgroundImage(makeGifUrl(`giphy-${n}`));
 }
 
 // Trial
@@ -51,7 +54,8 @@ function makeTrial() {
       setTitleText('You are human');
       setSubtitleText('Congratulations Paul, enjoy your Dune');
       setCoverColor('#0f0');
-      // setBackgroundImage();
+      setBackgroundImage(makeGifUrl('victory'));
+
     } else {
       setTitleText('You died');
       setSubtitleText('');

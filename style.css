@@ -12,32 +12,68 @@ body {
 /* Text */
 
 .text {
-  position: relative;
+  position: fixed;
   z-index: 4;
   width: 100%;
   text-align: center;
   color: #fff;
+  top: 50%;
+  margin-top: -240px;
 }
 
-/* Gom Jabbar */
+.text h1 {
+  padding: 0;
+  margin: 0;
+}
 
-.gom-jabbar {
+.text p {
+  padding: 0;
+  margin: 0;
+}
+
+/* Box */
+
+.box {
   z-index: 2;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -190px;
-  margin-top: -120px;
+  top: calc(50% - 100px);
+  left: calc(50% - 230px);
   width: 380px;
-  height: 240px;
-  background: #151c1a;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: perspective(16cm) rotateX(-20deg) rotateY(-32deg);
 }
 
-.gom-jabbar .gom-jabbar--center {
+.box .face {
+  position: fixed;
+}
+
+.box .face.top {
+  height: 380px;
+  width: 380px;
+  background: #1b2523;
+  transform: rotateX(90deg) translate3d(0, -140px, 190px);
+}
+
+.box .face.side {
+  height: 160px;
+  width: 380px;
+  background: #0b0f0e;
+  transform: rotateY(-90deg) translate3d(-140px, 0, -190px);
+}
+
+.box .face.front {
+  width: 380px;
+  height: 160px;
+  background: #151c1a;
+  transform: translate3d(0, 0, 50px);
+}
+
+.box .face.front .center {
   margin-top: 20px;
   margin-left: 20px;
   width: 340px;
-  height: 200px;
+  height: 120px;
   background: #000;
 }
 
