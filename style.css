@@ -40,7 +40,6 @@ body {
 /* Text */
 
 .text {
-  /* TODO: add animation class when trial starts and remove at end */
   position: fixed;
   z-index: 4;
   width: 100%;
@@ -166,7 +165,6 @@ body {
 }
 
 #background-cover {
-  /* TODO: add animation class when trial starts */
   background-color: #db7646;
   opacity: 0.6;
   z-index: 1;
