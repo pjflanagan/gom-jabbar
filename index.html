@@ -46,19 +46,6 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
   <script async src="./script.js"></script>
-  <script>
-    // Main
-    const [startTrial, endTrial] = makeTrial();
-
-    function startup() {
-      var el = document.getElementById('gom-jabbar-hole');
-      el.addEventListener('touchstart', startTrial, false);
-      el.addEventListener('touchend', endTrial, false);
-      el.addEventListener('touchcancel', endTrial, false);
-    }
-
-    document.addEventListener('DOMContentLoaded', startup);
-  </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNFGV4ZHRG"></script>
   <script>

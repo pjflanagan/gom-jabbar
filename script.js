@@ -149,3 +149,16 @@ function makeTrial() {
 
   return [startTrial, endTrial];
 }
+
+
+// Main
+const [startTrial, endTrial] = makeTrial();
+
+function startup() {
+  var el = document.getElementById('gom-jabbar-hole');
+  el.addEventListener('touchstart', startTrial, false);
+  el.addEventListener('touchend', endTrial, false);
+  el.addEventListener('touchcancel', endTrial, false);
+}
+
+document.addEventListener('DOMContentLoaded', startup);
