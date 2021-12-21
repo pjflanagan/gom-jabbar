@@ -35,7 +35,7 @@ const DEATH_SUBTITLES = [
 
 const VICTORY_SUBTITLES = [
   'Congratulations Paul, enjoy your Dune.',
-  `Spoiler: your dad won't be so lucky`,
+  `Spoiler: your old man won't be so lucky`,
   // ''
 ];
 
@@ -75,7 +75,7 @@ function makeGameoverScreen(didSurvive) {
   if (didSurvive) {
     setTitleText('You are human');
     setSubtitleText(getRandomPhrase(VICTORY_SUBTITLES));
-    setCoverColor('#75d10f');
+    setCoverColor('#d19e0f');
     setBackgroundImage(makeGifUrl('victory'));
     return;
   } 
@@ -83,6 +83,12 @@ function makeGameoverScreen(didSurvive) {
   setSubtitleText(getRandomPhrase(DEATH_SUBTITLES));
   setCoverColor('#cb0e0e');
   setBackgroundImage(makeBgUrl('gom-jabbar'));
+}
+
+function makeTrialScreen(ahhh) {
+  setTitleText(ahhh);
+  setSubtitleText(getRandomPhrase(TRIAL_SUBTITLES));
+  setBackgroundToRandomImage();
 }
 
 // Trial
@@ -98,15 +104,13 @@ function makeTrial() {
   }
 
   const startTrial = () => {
-
     // if we started a trial, do not restart
     if (trialEndTime) {
       console.error('Already ran trial');
       return;
     }
-    setTitleText(ahhh);
-    setSubtitleText(getRandomPhrase(TRIAL_SUBTITLES));
-    setBackgroundToRandomImage();
+
+    makeTrialScreen(ahhh);
 
     // set the end time of the trial
     trialEndTime = getCurrentTime() + DURATION;
@@ -114,17 +118,15 @@ function makeTrial() {
     function loop() {
       const interval = Math.random() * 2000 + 1200;
       timeout = setTimeout(() => {
-        setTitleText(ahhh += 'H');
-        setSubtitleText(getRandomPhrase(TRIAL_SUBTITLES));
-        setBackgroundToRandomImage();
+        makeTrialScreen(ahhh += 'H');
   
         // if the trial is over, end the trial
         if (getCurrentTime() > trialEndTime) {
           gameover(true);
-        } else {
-          loop();
-        }
+          return;
+        } 
 
+        loop();
       }, interval);
     }
 
@@ -132,7 +134,6 @@ function makeTrial() {
   }
 
   const endTrial = () => {
-
     // if there is no trial started
     if (!trialEndTime) {
       return;

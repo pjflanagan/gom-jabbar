@@ -52,7 +52,30 @@ body {
   height: 380px;
   width: 380px;
   background: #1b2523;
+  /* background: linear-gradient(90deg, rgba(90,108,108,1) 0%, rgba(85,130,127,1) 35%, rgba(29,58,60,1) 100%); */
   transform: rotateX(90deg) translate3d(0, -140px, 190px);
+}
+
+.box .face.top .center {
+  position: absolute;
+  height: 360px;
+  width: 360px;
+  background: #000;
+  margin: 10px;
+  background: rgba(29, 58, 60, 0.6);
+  border-bottom: 4px solid #0008;
+  border-right: 4px solid #0008;
+}
+
+.box .face.top .center .square {
+  position: absolute;
+  height: 280px;
+  width: 280px;
+  margin: 40px;
+  background: rgb(90,108,108);
+  background: linear-gradient(90deg, rgba(90,108,108,0.2) 0%, rgba(85,130,127,0.2) 35%, rgba(29,58,60,0.2) 100%);
+  border-top: 4px solid #0008;
+  border-left: 4px solid #0008;
 }
 
 .box .face.side {
@@ -71,10 +94,11 @@ body {
 
 .box .face.front .center {
   margin-top: 20px;
-  margin-left: 20px;
-  width: 340px;
+  margin-left: 50px;
+  width: 280px;
   height: 120px;
   background: #000;
+  cursor: grab;
 }
 
 /* Background and Cover */
