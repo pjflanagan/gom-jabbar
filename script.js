@@ -30,7 +30,7 @@ const TRIAL_SUBTITLES = [
 const DEATH_SUBTITLES = [
   'Give up your water.',
   'Fear was the mind killer.',
-  'IIIII AAAAM, SHAKIRAAAAAAAA!'
+  // 'IIIII AAAAM, SHAKIRAAAAAAAA!'
   // ''
 ];
 
