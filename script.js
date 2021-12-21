@@ -75,7 +75,17 @@ function setBackgroundToRandomImage() {
   setBackgroundImage(makeGifUrl(`giphy-${n}`));
 }
 
+function setAnimation(elem, animation) {
+  $(`#${elem}`).addClass(animation);
+}
+
+function removeAnimation(elem, animation) {
+  $(`#${elem}`).removeClass(animation);
+}
+
 function makeGameoverScreen(didSurvive) {
+  removeAnimation('text', 'shake');
+  removeAnimation('background-image', 'shake');
   if (didSurvive) {
     setTitleText('You are human');
     setSubtitleText(getRandomPhrase(VICTORY_SUBTITLES));
@@ -114,6 +124,8 @@ function makeTrial() {
       return;
     }
 
+    setAnimation('text', 'shake');
+    setAnimation('background-image', 'shake');
     makeTrialScreen(ahhh);
 
     // set the end time of the trial
@@ -155,12 +167,7 @@ function makeTrial() {
 
 // Main
 const [startTrial, endTrial] = makeTrial();
-
-function startup() {
-  var el = document.getElementById('gom-jabbar-hole');
-  el.addEventListener('touchstart', startTrial, false);
-  el.addEventListener('touchend', endTrial, false);
-  el.addEventListener('touchcancel', endTrial, false);
-}
-
-document.addEventListener('DOMContentLoaded', startup);
+// var el = document.getElementById('gom-jabbar-hole');
+// el.addEventListener('touchstart', startTrial, false);
+// el.addEventListener('touchend', endTrial, false);
+// el.addEventListener('touchcancel', endTrial, false);
