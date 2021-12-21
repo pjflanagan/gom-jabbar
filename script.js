@@ -84,7 +84,7 @@ function removeAnimation(elem, animation) {
 }
 
 function makeGameoverScreen(didSurvive) {
-  removeAnimation('text', 'shake');
+  removeAnimation('text-animator', 'shake');
   removeAnimation('background-image', 'shake');
   if (didSurvive) {
     setTitleText('You are human');
@@ -124,7 +124,7 @@ function makeTrial() {
       return;
     }
 
-    setAnimation('text', 'shake');
+    setAnimation('text-animator', 'shake');
     setAnimation('background-image', 'shake');
     makeTrialScreen(ahhh);
 
@@ -164,10 +164,6 @@ function makeTrial() {
   return [startTrial, endTrial];
 }
 
-
 // Main
+
 const [startTrial, endTrial] = makeTrial();
-// var el = document.getElementById('gom-jabbar-hole');
-// el.addEventListener('touchstart', startTrial, false);
-// el.addEventListener('touchend', endTrial, false);
-// el.addEventListener('touchcancel', endTrial, false);

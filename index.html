@@ -31,8 +31,10 @@
 <body>
 
   <div class="text" id="text">
-    <h1 id="title">Trial of the Gom Jabbar</h1>
-    <p id="sub-title">Put your hand in the box.</p>
+    <div id="text-animator">
+      <h1 id="title">Trial of the Gom Jabbar</h1>
+      <p id="sub-title">Put your hand in the box.</p>
+    </div>
   </div>
 
   <div id="page-cover" class="full-screen"></div>
@@ -51,7 +53,9 @@
   </div>
 
   <div id="background-cover" class="full-screen"></div>
-  <div id="background-image" class="full-screen"></div>
+  <div class="background-image-holder full-screen">
+    <div id="background-image" class="full-screen"></div>
+  </div>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"

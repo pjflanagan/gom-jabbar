@@ -151,15 +151,19 @@ body {
 
 #background-cover {
   /* TODO: add animation class when trial starts */
-  background-color: #52150d;
+  background-color: #db7646;
   opacity: 0.6;
   z-index: 1;
   transform: translate3d(0, 0, -300px);
 }
 
-#background-image {
+.background-image-holder {
   z-index: 0;
+  transform: translate3d(0, 0, -400px);
+}
+
+#background-image {
   background-size: cover;
   background-position: center;
-  transform: translate3d(0, 0, -400px);
+  background-image: url(./img/bg/cover.jpg);
 }
