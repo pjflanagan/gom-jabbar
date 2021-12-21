@@ -141,8 +141,8 @@ body {
   margin-left: -169px;
   margin-top: 12px;
   filter: blur(27px);
-  transform: rotate(7deg);
   border-radius: 100px;
+  transform: rotate(7deg) translate3d(0, 0, -290px);
 }
 
 /* Background and Cover */
