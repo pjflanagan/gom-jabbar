@@ -162,6 +162,7 @@ body {
   opacity: 0.6;
   transition: background-color 0.4s;
   transform: translate3d(0, 0, 900px);
+  box-shadow: inset 0 0 100px rgb(0 0 0 / 67%);
 }
 
 #background-cover {
