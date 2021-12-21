@@ -27,7 +27,7 @@ body {
   color: #fff;
   top: 50%;
   margin-top: -240px;
-  /* transform: translate3d(0, 0, 1000px); */
+  transform: translate3d(0, 0, 1000px);
 }
 
 .text h1 {
@@ -125,7 +125,7 @@ body {
   z-index: 3;
   opacity: 0.6;
   transition: background-color 0.4s;
-  /* transform: translate3d(0, 0, 900px); */
+  transform: translate3d(0, 0, 900px);
 }
 
 #background-cover {
@@ -133,10 +133,12 @@ body {
   background-color: #52150d;
   opacity: 0.6;
   z-index: 1;
+  transform: translate3d(0, 0, -300px);
 }
 
 #background-image {
   z-index: 0;
   background-size: cover;
   background-position: center;
+  transform: translate3d(0, 0, -400px);
 }

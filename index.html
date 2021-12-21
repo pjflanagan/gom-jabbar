@@ -38,7 +38,15 @@
 
   <div class="box">
     <div class="face front">
-      <div id="gom-jabbar-hole" class="center" onmouseenter="startTrial()" onmouseleave="endTrial()"></div>
+      <div
+        id="gom-jabbar-hole"
+        class="center"
+        onmouseenter="startTrial()"
+        ontouchstart="startTrial()"
+        onmouseleave="endTrial()"
+        touchend="endTrial()"
+        touchcancel="endTrial()"
+      ></div>
     </div>
     <div class="face top">
       <div class="center">

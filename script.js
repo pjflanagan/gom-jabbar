@@ -25,6 +25,8 @@ const TRIAL_SUBTITLES = [
   `An animal caught in a trap will knaw off its leg...`,
   '...what will you do?',
   `What's in the box? Pain.`,
+  'IIIII AAAAM, SHAKIRAAAAAAAA!',
+  `It's like a sci-fi microwave or something`
 ];
 
 const DEATH_SUBTITLES = [
