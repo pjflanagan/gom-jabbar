@@ -131,6 +131,21 @@ body {
   cursor: grab;
 }
 
+#box-shadow {
+  background: #000;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  height: 100px;
+  width: 365px;
+  left: 50%;
+  margin-left: -169px;
+  margin-top: 12px;
+  filter: blur(27px);
+  transform: rotate(7deg);
+  border-radius: 100px;
+}
+
 /* Background and Cover */
 
 .full-screen {

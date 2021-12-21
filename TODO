@@ -1,7 +1,7 @@
  1.
- - [ ] mobile size and touch screen
+ - [x] touch screen
  - [x] social share cards
  
  2.
- - [ ] Add a shake animation to the text during the trial
- - [ ] Add a background flash animation
+ - [x] Add a shake animation to the text during the trial
+ - [x] Add a background color animation

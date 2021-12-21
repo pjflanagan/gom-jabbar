@@ -16,6 +16,24 @@ function makeBgUrl(name) {
   return `./img/bg/${name}.jpg`;
 }
 
+function getRandomFromArray(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+} 
+
+// Colors
+
+const BACKGROUND_TRIAL_COLORS = [
+  '#cb0e0e',
+  '#d45f39',
+  '#dc8540',
+  '#cd4518',
+  '#a91010'
+];
+
+function getRandomColor() {
+  return getRandomFromArray(BACKGROUND_TRIAL_COLORS);
+}
+
 // Text
 
 const TRIAL_SUBTITLES = [
@@ -44,7 +62,7 @@ const VICTORY_SUBTITLES = [
 ];
 
 function getRandomPhrase(phrases) {
-  return phrases[Math.floor(Math.random() * phrases.length)];
+  return getRandomFromArray(phrases);
 }
 
 // UI
@@ -60,7 +78,12 @@ function setSubtitleText(text) {
 function setCoverColor(color) {
   $('#page-cover').css({
     backgroundColor: color,
-    // opactity
+  });
+}
+
+function setBackgroundCoverColor(color) {
+  $('#background-cover').css({
+    backgroundColor: color,
   })
 }
 
@@ -95,7 +118,7 @@ function makeGameoverScreen(didSurvive) {
   } 
   setTitleText('You died');
   setSubtitleText(getRandomPhrase(DEATH_SUBTITLES));
-  setCoverColor('#cb0e0e');
+  setCoverColor('#780404');
   setBackgroundImage(makeBgUrl('gom-jabbar'));
 }
 
@@ -103,6 +126,7 @@ function makeTrialScreen(ahhh) {
   setTitleText(ahhh);
   setSubtitleText(getRandomPhrase(TRIAL_SUBTITLES));
   setBackgroundToRandomImage();
+  setBackgroundCoverColor(getRandomColor());
 }
 
 // Trial
