@@ -19,6 +19,7 @@ body {
 /* Text */
 
 .text {
+  /* TODO: add animation class when trial starts and remove at end */
   position: fixed;
   z-index: 4;
   width: 100%;
@@ -26,6 +27,7 @@ body {
   color: #fff;
   top: 50%;
   margin-top: -240px;
+  /* transform: translate3d(0, 0, 1000px); */
 }
 
 .text h1 {
@@ -123,6 +125,7 @@ body {
   z-index: 3;
   opacity: 0.6;
   transition: background-color 0.4s;
+  /* transform: translate3d(0, 0, 900px); */
 }
 
 #background-cover {
