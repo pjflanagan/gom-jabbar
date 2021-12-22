@@ -181,3 +181,14 @@ body {
   background-position: center;
   background-image: url(./img/bg/cover.jpg);
 }
+
+@media screen and (max-width: 540px) {
+  .box {
+    top: calc(50% - 39px);
+    left: calc(50% - 214px);
+    width: 380px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(16cm) rotateX(-17deg) rotateY(-27deg) scale3d(0.7, 0.8, 0.7);
+  }
+}
